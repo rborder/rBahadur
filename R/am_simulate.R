@@ -1,0 +1,42 @@
+#' Simulate genotype/phenotype data under univariate AM
+#'
+#' @param h2_0 generation zero (panmictic) heritability
+#' @param r cross-mate phenotypic correlation
+#' @param m number of biallelic causal variants
+#' @param n sample size
+#' @param min_MAF minimum minor allele frequency for causal variants
+#'
+#' @return
+#' @export
+#'
+#' @examples
+am_simulate <- function(h2_0, r, m, n, min_MAF=.1) {
+  ## draw standardized diploid allele substitution effects
+  beta <- scale(rnorm(m))*sqrt(h2_0 / m)
+  ## draw allele frequencies
+  AF <- runif(m, min_MAF, 1 - min_MAF)
+  ## compute unstandardized effects
+  beta_unscaled <- beta/sqrt(2*AF*(1-AF))
+  ## generate corresponding haploid quantities
+  beta_hap <- rep(beta, each=2)
+  AF_hap <- rep(AF, each=2)
+  ## compute equilibrium outer product covariance component
+  U <- am_covariance_structure(beta, AF, r)
+  ## draw multivariate Bernoulli haplotypes
+  H <- rbahadur_dplr(n, AF_hap, U)
+  ## convert haplotypes to diploid genotypes
+  X = (H[,seq(1,2*m,2)]+H[,seq(2,2*m,2)])
+  ## compute genetic phenotypes
+  g = X %*% beta_unscaled
+  ## compute full phenotype
+  y = g + rnorm(n, 0, sqrt(1 - h2_0))
+  return(list(
+    y = y,
+    g = g,
+    X = X,
+    AF = AF,
+    beta_std = beta,
+    beta_raw = beta_unscaled
+    ))
+}
+
