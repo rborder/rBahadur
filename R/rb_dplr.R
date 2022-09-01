@@ -72,7 +72,7 @@ rb_dplr <- function(n, mu, U) {
   for (m in 2:(M-1)) {
     p <- mu[m] + x * U[m]
     if (any(p < 0 | p > 1)) {
-      stop('Infeasible probability. Fix inputs.')
+      stop('Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
     }
     k[ ,m] <- (rand_U[ ,m] <= p)
 
@@ -86,7 +86,7 @@ rb_dplr <- function(n, mu, U) {
   }
   p <- mu[M] + x*U[M]
   if (any(p < 0 | p > 1)) {
-    stop(mu[M],' ',p,' Infeasible probability. Fix inputs.')
+    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
   }
   k[ ,M] <-(rand_U[ ,M] <= p)
 

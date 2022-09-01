@@ -89,7 +89,7 @@ rb_unstr <- function(n, mu, C) {
   for (m in 2:(M-1)) {
     p <- drop(mu[m] + v%*%C[1:(m-1),m])
     if (any(p < 0 | p > 1)) {
-      stop('Infeasible probability. Fix inputs.')
+      stop('Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
     }
     k[ ,m] <- (rand_U[ ,m] <= p)
 
@@ -103,7 +103,7 @@ rb_unstr <- function(n, mu, C) {
   }
   p <- drop(mu[M] + v%*%C[1:(M-1),M])
   if (any(p < 0 | p > 1)) {
-    stop(mu[M],' ',p,' Infeasible probability. Fix inputs.')
+    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
   }
   k[ ,M] <-(rand_U[ ,M] <= p)
 
