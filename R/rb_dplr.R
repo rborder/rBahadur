@@ -12,9 +12,44 @@
 #' @export
 #'
 #' @examples
-rbahadur_dplr <- function(n, mu, U) {
-
-  ## place holder for assert statements
+#' set.seed(1)
+#' h2_0 = .5; m = 200; n = 5000; r =.5; min_MAF=.1
+#'
+#' ## draw standardized diploid allele substitution effects
+#' beta <- scale(rnorm(m))*sqrt(h2_0 / m)
+#'
+#' ## draw allele frequencies
+#' AF <- runif(m, min_MAF, 1 - min_MAF)
+#'
+#' ## compute unstandardized effects
+#' beta_unscaled <- beta/sqrt(2*AF*(1-AF))
+#'
+#' ## generate corresponding haploid quantities
+#' beta_hap <- rep(beta, each=2)
+#' AF_hap <- rep(AF, each=2)
+#'
+#' ## compute equilibrium outer product covariance component
+#' U <- am_covariance_structure(beta, AF, r)
+#'
+#' ## draw multivariate Bernoulli haplotypes
+#' H <- rb_dplr(n, AF_hap, U)
+#'
+#' ## convert to diploid genotypes
+#' G <- H[,seq(1,ncol(H),2)] + H[,seq(2,ncol(H),2)]
+#'
+#' ## empirical allele frequencies vs target frequencies
+#' emp_afs <- colMeans(G)/2
+#' plot(AF, emp_afs)
+#'
+#' ## construct phenotype
+#' heritable_y <-  G%*%beta_unscaled
+#' nonheritable_y <-  rnorm(n, 0, sqrt(1-h2_0))
+#' y <- heritable_y + nonheritable_y
+#'
+#' ## empirical h2 vs expected equilibrium h2
+#' (emp_h2 <- var(heritable_y)/var(y))
+#' h2_eq(r, h2_0)
+rb_dplr <- function(n, mu, U) {
 
   M <- length(mu)
 
