@@ -65,5 +65,5 @@ h2_eq(r, .5)
 
 ## Citation
 
-For further details, see <PLACEHOLDER>
+For further details, see `<PLACEHOLDER>`
 
