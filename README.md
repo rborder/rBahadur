@@ -69,7 +69,7 @@ h2_eq(r, .5)
 
 ## Citation
 
-Developed by [Richard Border](https://richardborder.com) and [Osman Malik](https://osmanmalik.github.io/). If you find this software useful, please cite `<PLACEHOLDER>`
+Developed by [Richard Border](https://www.richardborder.com) and [Osman Malik](https://osmanmalik.github.io/). If you find this software useful, please cite `<PLACEHOLDER>`
 
 For further details, see `<PLACEHOLDER>`
 
