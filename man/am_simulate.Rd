@@ -2,7 +2,7 @@
 % Please edit documentation in R/am_simulate.R
 \name{am_simulate}
 \alias{am_simulate}
-\title{Simulate genotype/phenotype data under univariate AM}
+\title{Simulate genotype/phenotype data under equilibrium univariate AM.}
 \usage{
 am_simulate(h2_0, r, m, n, min_MAF = 0.1)
 }
@@ -18,12 +18,21 @@ am_simulate(h2_0, r, m, n, min_MAF = 0.1)
 \item{min_MAF}{minimum minor allele frequency for causal variants}
 }
 \value{
-
+A list including the following objects:
+\itemize{
+\item \code{y}: phenotype vector
+\item \code{g}: heritable component of the phenotype vector
+\item \code{X}: matrix of diploid genotypes
+\item \code{AF}: vector of allele frequences
+\item \code{beta_std}: standardized genetic effects
+\item \code{beta_raw}: unstandardized genetic effects
+}
 }
 \description{
-Simulate genotype/phenotype data under univariate AM
+Simulate genotype/phenotype data under equilibrium univariate AM.
 }
 \examples{
+\dontrun{
 set.seed(1)
 h2_0 = .5; m = 200; n = 5000; r =.5
 
@@ -34,4 +43,5 @@ str(sim_dat)
 ## empirical h2 vs expected equilibrium h2
 (emp_h2 <- var(sim_dat$g)/var(sim_dat$y))
 h2_eq(r, h2_0)
+}
 }

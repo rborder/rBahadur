@@ -2,7 +2,8 @@
 % Please edit documentation in R/am_covariance_structure.R
 \name{am_covariance_structure}
 \alias{am_covariance_structure}
-\title{Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating}
+\title{Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
+#'}
 \usage{
 am_covariance_structure(beta, AF, r)
 }
@@ -18,4 +19,5 @@ Vector 'U' such that $D + U U^T$ corresponds to the expected haploid LD-matrix g
 }
 \description{
 Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
+#'
 }

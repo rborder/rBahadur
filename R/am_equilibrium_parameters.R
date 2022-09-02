@@ -6,18 +6,18 @@
 #' @param r cross-mate phenotypic correlation
 #' @param h2_0 generation zero (panmictic) heritability
 #' @param vg_0 generation zero (panmictic) additive genetic variance component
-#'
-#' @export
-#'
+#' @return A single numerical quantity representing the equilibrium heritability (`h2_eq`), the equilibrium cross-mate genetic correlation (`rg_eq`), or the equilibrium genetic variance (`vg_eq`).
 #' @name am_equilibrium_parameters
 NULL
 #> NULL
+
 #' @rdname am_equilibrium_parameters
 #' @export
 h2_eq <- function(r, h2_0){
   1/(2*r) *
     (1/(1-h2_0) -  sqrt((1-h2_0)^-2 - 4*r*h2_0/(1-h2_0)))
 }
+
 #' @rdname am_equilibrium_parameters
 #' @export
 rg_eq <- function(r, h2_0) {
@@ -25,6 +25,7 @@ rg_eq <- function(r, h2_0) {
   tmp*(tmp-sqrt(tmp^2-4*r*h2_0*tmp))/2
   ((1-h2_0)^-1-sqrt(1/(1-h2_0)^2-4*r*h2_0/(1-h2_0)))/2
 }
+
 #' @rdname am_equilibrium_parameters
 #' @export
 vg_eq <- function(r, vg_0, h2_0)  {

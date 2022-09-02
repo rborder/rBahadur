@@ -1,4 +1,6 @@
 #' Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
+#' #'
+#' @importFrom stats runif rnorm
 #'
 #' @param beta vector of standardized diploid allele-substitution effects
 #' @param AF vector of allele frequencies

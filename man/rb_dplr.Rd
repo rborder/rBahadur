@@ -23,6 +23,7 @@ Generate second Bahadur order multivariate Bernoulli random variates with Diagon
 This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standarized central second moments \eqn{C} such that all higher order central moments are zero.
 }
 \examples{
+\dontrun{
 set.seed(1)
 h2_0 = .5; m = 200; n = 5000; r =.5; min_MAF=.1
 
@@ -60,4 +61,5 @@ y <- heritable_y + nonheritable_y
 ## empirical h2 vs expected equilibrium h2
 (emp_h2 <- var(heritable_y)/var(y))
 h2_eq(r, h2_0)
+}
 }

@@ -2,6 +2,8 @@
 #'
 #' Generate Bahadur order-2 multivariate Bernoulli random variates with unstructured correlations.
 #'
+#' @importFrom stats runif
+#'
 #' @param n number of observations
 #' @param mu vector of means
 #' @param C correlation matrix
@@ -12,6 +14,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(1)
 #' h2_0 = .5; m = 200; n = 5000; r =.5; min_MAF=.1
 #'
@@ -55,7 +58,7 @@
 #' ## empirical h2 vs expected equilibrium h2
 #' (emp_h2 <- var(heritable_y)/var(y))
 #' h2_eq(r, h2_0)
-
+#' }
 
 rb_unstr <- function(n, mu, C) {
 

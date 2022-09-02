@@ -1,4 +1,4 @@
-#' Simulate genotype/phenotype data under univariate AM
+#' Simulate genotype/phenotype data under equilibrium univariate AM.
 #'
 #' @param h2_0 generation zero (panmictic) heritability
 #' @param r cross-mate phenotypic correlation
@@ -6,10 +6,17 @@
 #' @param n sample size
 #' @param min_MAF minimum minor allele frequency for causal variants
 #'
-#' @return
+#' @return A list including the following objects:
+#' * `y`: phenotype vector
+#' * `g`: heritable component of the phenotype vector
+#' * `X`: matrix of diploid genotypes
+#' * `AF`: vector of allele frequences
+#' * `beta_std`: standardized genetic effects
+#' * `beta_raw`: unstandardized genetic effects
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' set.seed(1)
 #' h2_0 = .5; m = 200; n = 5000; r =.5
 #'
@@ -20,6 +27,7 @@
 #' ## empirical h2 vs expected equilibrium h2
 #' (emp_h2 <- var(sim_dat$g)/var(sim_dat$y))
 #' h2_eq(r, h2_0)
+#' }
 
 am_simulate <- function(h2_0, r, m, n, min_MAF=.1) {
   ## draw standardized diploid allele substitution effects
