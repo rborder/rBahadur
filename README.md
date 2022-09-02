@@ -1,5 +1,9 @@
 # rBahadur
 
+<!-- badges: start -->
+[![DOI](https://zenodo.org/badge/531716870.svg)](https://zenodo.org/badge/latestdoi/531716870)
+<!-- badges: end -->
+
 > Efficient simulation of genotype / phenotype data under
 > assortative mating by generating Bahadur order-2
 > multivariate Bernoulli distributed random variates.
