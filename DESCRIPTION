@@ -1,5 +1,5 @@
 Package: rBahadur
-Title: Assortative Mating Simulation and Multivariate Bernoulli Random Variates Using Order-2 Bahadur Representaion 
+Title: Assortative Mating Simulation and Multivariate Bernoulli Random Variates Using Order-2 Bahadur Representation 
 Version: 0.9.0
 Authors@R: 
     c(person("Richard", "Border", 
