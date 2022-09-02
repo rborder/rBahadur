@@ -73,6 +73,6 @@ For further details, see `<PLACEHOLDER>`
 
  - The Multivariate Bernoulli distribution and the Bahadur representation:
    - Teugels, J.L., 1990. Some representations of the multivariate Bernoulli and binomial distributions. _Journal of Multivariate Analysis_, 32(2), pp.256-268. https://doi.org/10.1016/0047-259X(90)90084-U
-   - Bahadur, R.R., 1959. A representation of the joint distribution of responses to n dichotomous items. _School of Aviation Medecine, Randolph AFB, Texas_. https://apps.dtic.mil/sti/citations/AD0706093
+   - Bahadur, R.R., 1959. A representation of the joint distribution of responses to n dichotomous items. _School of Aviation Medicine, Randolph AFB, Texas_. https://apps.dtic.mil/sti/citations/AD0706093
  - Cross-generational dynamics of genetic variants under univariate assortative mating:
     - Nagylaki, T., 1982. Assortative mating for a quantitative character. _Journal of Mathematical Biology_, 16, pp.57–74. https://doi.org/10.1007/BF00275161
