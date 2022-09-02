@@ -35,7 +35,7 @@ Here we demonstrate using `rBahadur` to simulate genotype / phenotype at equilib
  - `r`: cross-mate phenotypic correlation
  - `m`: number of diploid, biallelic causal variants
  - `n`: number of individuals to simulate
- - `min_MAF`: minimum minor allele frequency:
+ - `min_MAF`: minimum minor allele frequency
  
  ```r
 set.seed(2022)
