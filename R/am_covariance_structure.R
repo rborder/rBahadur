@@ -7,6 +7,12 @@
 #' @param r cross-mate phenotypic correlation
 #'
 #' @return Vector 'U' such that $D + U U^T$ corresponds to the expected haploid LD-matrix given the specified genetic architecture (encoded by 'beta' and 'AF') and cross-mate phenotypic correlation 'r'. It is assumed that the total phenotypic variance at generation zero is one.
+#' @examples
+#' set.seed(1)
+#' h2_0 = .5; m = 200; n = 1000; r =.5; min_MAF=.1
+#' betas <- rnorm(m,0,sqrt(h2_0/m))
+#' afs <- runif(m, min_MAF, 1-min_MAF)
+#' output <- am_covariance_structure(betas, afs, r)
 #' @export
 am_covariance_structure <- function(beta, AF, r) {
   ## obtain haploid substitution effects, variances

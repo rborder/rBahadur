@@ -10,7 +10,13 @@
 #' @name am_equilibrium_parameters
 NULL
 #> NULL
-
+#' @examples
+#' set.seed(1)
+#' vg_0= .6; h2_0 = .5; r =.5
+#' h2_eq(r, h2_0)
+#' rg_eq(r, h2_0)
+#' vg_eq(r, vg_0, h2_0)
+#' @export
 #' @rdname am_equilibrium_parameters
 #' @export
 h2_eq <- function(r, h2_0){
@@ -21,8 +27,8 @@ h2_eq <- function(r, h2_0){
 #' @rdname am_equilibrium_parameters
 #' @export
 rg_eq <- function(r, h2_0) {
-  tmp <- 1/(1-h2_0)
-  tmp*(tmp-sqrt(tmp^2-4*r*h2_0*tmp))/2
+  ## tmp <- 1/(1-h2_0)
+  ## tmp*(tmp-sqrt(tmp^2-4*r*h2_0*tmp))/2
   ((1-h2_0)^-1-sqrt(1/(1-h2_0)^2-4*r*h2_0/(1-h2_0)))/2
 }
 

@@ -14,9 +14,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' set.seed(1)
-#' h2_0 = .5; m = 200; n = 5000; r =.5; min_MAF=.1
+#' h2_0 = .5; m = 200; n = 1000; r =.5; min_MAF=.1
 #'
 #' ## draw standardized diploid allele substitution effects
 #' beta <- scale(rnorm(m))*sqrt(h2_0 / m)
@@ -58,7 +57,6 @@
 #' ## empirical h2 vs expected equilibrium h2
 #' (emp_h2 <- var(heritable_y)/var(y))
 #' h2_eq(r, h2_0)
-#' }
 
 rb_unstr <- function(n, mu, C) {
 
