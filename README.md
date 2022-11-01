@@ -69,9 +69,7 @@ h2_eq(r, .5)
 
 ## Citation
 
-Developed by [Richard Border](https://www.richardborder.com) and [Osman Malik](https://osmanmalik.github.io/). If you find this software useful, please cite `<PLACEHOLDER>`
-
-For further details, see [our preprint](https://doi.org/10.1101/2022.10.13.512132):
+Developed by [Richard Border](https://www.richardborder.com) and [Osman Malik](https://osmanmalik.github.io/). For further details, or if you find this software useful, please cite:
  - Border, R. and Malik, O.A., 2022. `rBahadur`: Efficient simulation of high-dimensional genotype data with global dependence structures. _bioRxiv_. https://doi.org/10.1101/2022.10.13.512132 
 
 ## Background reading:
