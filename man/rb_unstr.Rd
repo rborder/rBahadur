@@ -24,7 +24,7 @@ This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu'
 }
 \examples{
 set.seed(1)
-h2_0 = .5; m = 200; n = 1000; r =.5; min_MAF=.1
+h2_0 = .5; m = 200; n = 500; r =.5; min_MAF=.1
 
 ## draw standardized diploid allele substitution effects
 beta <- scale(rnorm(m))*sqrt(h2_0 / m)
