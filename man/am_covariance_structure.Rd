@@ -21,3 +21,10 @@ Vector 'U' such that $D + U U^T$ corresponds to the expected haploid LD-matrix g
 Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
 #'
 }
+\examples{
+set.seed(1)
+h2_0 = .5; m = 200; n = 1000; r =.5; min_MAF=.1
+betas <- rnorm(m,0,sqrt(h2_0/m))
+afs <- runif(m, min_MAF, 1-min_MAF)
+output <- am_covariance_structure(betas, afs, r)
+}
