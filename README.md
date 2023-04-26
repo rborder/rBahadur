@@ -1,7 +1,7 @@
 # rBahadur
 
 <!-- badges: start -->
-"[![CRAN](https://www.r-pkg.org/badges/version/rBahadur)](https://cran.r-project.org/package=rBahadur)"
+[![CRAN](https://www.r-pkg.org/badges/version/rBahadur)](https://cran.r-project.org/package=rBahadur)
 [![DOI](https://zenodo.org/badge/531716870.svg)](https://zenodo.org/badge/latestdoi/531716870)
 
 <!-- badges: end -->
