@@ -1,7 +1,9 @@
 # rBahadur
 
 <!-- badges: start -->
+"[![CRAN](https://www.r-pkg.org/badges/version/rBahadur)](https://cran.r-project.org/package=rBahadur)"
 [![DOI](https://zenodo.org/badge/531716870.svg)](https://zenodo.org/badge/latestdoi/531716870)
+
 <!-- badges: end -->
 
 > Efficient simulation of genotype / phenotype data under
@@ -25,7 +27,13 @@
 
 ## Installation
 
-We recommend installation using the `install_github` function provided by the [`remotes` library](https://github.com/r-lib/remotes):
+`rBahadur` is now on CRAN:
+
+```r
+install.packages("rBahadur")
+```
+
+Alternatively, you can install directly from github using the `install_github` function provided by the [`remotes` library](https://github.com/r-lib/remotes):
 
 ```r
 remotes::install_github("rborder/rBahadur")
