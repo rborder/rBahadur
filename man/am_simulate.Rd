@@ -4,7 +4,7 @@
 \alias{am_simulate}
 \title{Simulate genotype/phenotype data under equilibrium univariate AM.}
 \usage{
-am_simulate(h2_0, r, m, n, min_MAF = 0.1)
+am_simulate(h2_0, r, m, n, min_MAF = 0.1, haplotypes = FALSE)
 }
 \arguments{
 \item{h2_0}{generation zero (panmictic) heritability}
@@ -16,6 +16,8 @@ am_simulate(h2_0, r, m, n, min_MAF = 0.1)
 \item{n}{sample size}
 
 \item{min_MAF}{minimum minor allele frequency for causal variants}
+
+\item{haplotypes}{logical. If TRUE, includes (phased) haploid genotypes in output. Defaults to FALSE}
 }
 \value{
 A list including the following objects:
@@ -26,6 +28,7 @@ A list including the following objects:
 \item \code{AF}: vector of allele frequences
 \item \code{beta_std}: standardized genetic effects
 \item \code{beta_raw}: unstandardized genetic effects
+\item \code{H}: matrix of haploid genotypes (returned only if \code{haplotypes}=TRUE)
 }
 }
 \description{

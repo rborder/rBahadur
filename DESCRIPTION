@@ -18,4 +18,4 @@ Depends:
     R (>= 3.3.0),
     stats
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3

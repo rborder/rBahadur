@@ -5,6 +5,7 @@
 #' @param m number of biallelic causal variants
 #' @param n sample size
 #' @param min_MAF minimum minor allele frequency for causal variants
+#' @param haplotypes logical. If TRUE, includes (phased) haploid genotypes in output. Defaults to FALSE
 #'
 #' @return A list including the following objects:
 #' * `y`: phenotype vector
@@ -13,6 +14,8 @@
 #' * `AF`: vector of allele frequences
 #' * `beta_std`: standardized genetic effects
 #' * `beta_raw`: unstandardized genetic effects
+#' * `H`: matrix of haploid genotypes (returned only if `haplotypes`=TRUE)
+#' 
 #' @export
 #'
 #' @examples
@@ -27,7 +30,7 @@
 #' (emp_h2 <- var(sim_dat$g)/var(sim_dat$y))
 #' h2_eq(r, h2_0)
 
-am_simulate <- function(h2_0, r, m, n, min_MAF=.1) {
+am_simulate <- function(h2_0, r, m, n, min_MAF=.1, haplotypes=FALSE) {
   ## draw standardized diploid allele substitution effects
   beta <- scale(rnorm(m))*sqrt(h2_0 / m)
   ## draw allele frequencies
@@ -47,13 +50,17 @@ am_simulate <- function(h2_0, r, m, n, min_MAF=.1) {
   g = X %*% beta_unscaled
   ## compute full phenotype
   y = g + rnorm(n, 0, sqrt(1 - h2_0))
-  return(list(
+  output <- list(
     y = y,
     g = g,
     X = X,
     AF = AF,
     beta_std = beta,
     beta_raw = beta_unscaled
-    ))
+    )
+  if (haplotypes) {
+    output$H <- H
+  }
+  return(output)
 }
 
