@@ -21,10 +21,16 @@ vg_eq(r, vg_0, h2_0)
 \item{vg_0}{generation zero (panmictic) additive genetic variance component}
 }
 \value{
-A single numerical quantity representing the equilibrium heritability (\code{h2_eq}), the equilibrium cross-mate genetic correlation (\code{rg_eq}), or the equilibrium genetic variance (\code{vg_eq}).
+A single numerical quantity representing the equilibrium heritability (\code{h2_eq}),
+the equilibrium cross-mate genetic correlation (\code{rg_eq}), or the equilibrium genetic
+variance (\code{vg_eq}).
 }
 \description{
-Compute heritability ('h2_eq'), genetic variance ('vg_0'), and cross-mate genetic correlation ('rg_eq') at equilibrium under univariate primary-phenotypic assortative mating. These equations can be derived from Nagylaki's results (see below) under the assumption that number of causal variants is large (i.e., taking the limit as the number of causal variants approaches infinity).
+Compute heritability ('h2_eq'), genetic variance ('vg_0'), and cross-mate genetic
+correlation ('rg_eq') at equilibrium under univariate primary-phenotypic assortative mating.
+These equations can be derived from Nagylaki's results (see below) under the assumption
+that number of causal variants is large (i.e., taking the limit as the number of causal
+variants approaches infinity).
 }
 \examples{
 set.seed(1)
@@ -34,5 +40,6 @@ rg_eq(r, h2_0)
 vg_eq(r, vg_0, h2_0)
 }
 \references{
-Nagylaki, T. Assortative mating for a quantitative character. J. Math. Biology 16, 57–74 (1982). https://doi.org/10.1007/BF00275161
+Nagylaki, T. Assortative mating for a quantitative character. J. Math. Biology
+16, 57–74 (1982). https://doi.org/10.1007/BF00275161
 }

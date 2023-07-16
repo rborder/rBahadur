@@ -14,13 +14,20 @@ rb_unstr(n, mu, C)
 \item{C}{correlation matrix}
 }
 \value{
-An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the length of 'mu'.
+An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the
+length of 'mu'.
 }
 \description{
-Generate Bahadur order-2 multivariate Bernoulli random variates with unstructured correlations.
+Generate Bahadur order-2 multivariate Bernoulli random variates with
+unstructured correlations.
 }
 \details{
-This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix 'C'. 'mu' must take values in the open unit interval and 'C' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standardized central second moments 'C' such that all higher order central moments are zero.
+This generates multivariate Bernoulli (MVB) random vectors with mean vector
+'mu' and correlation matrix 'C'. 'mu' must take values in the open unit interval and
+'C' must induce a valid second Bahadur order probability distribution. That is,
+there must exist an MVB probability distribution with first moments 'mu' and
+standardized central second moments 'C' such that all higher order central moments
+are zero.
 }
 \examples{
 set.seed(1)

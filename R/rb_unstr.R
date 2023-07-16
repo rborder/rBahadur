@@ -1,6 +1,7 @@
 #' Binary random variates with unstructured correlations
 #'
-#' Generate Bahadur order-2 multivariate Bernoulli random variates with unstructured correlations.
+#' Generate Bahadur order-2 multivariate Bernoulli random variates with 
+#' unstructured correlations.
 #'
 #' @importFrom stats runif
 #'
@@ -8,9 +9,15 @@
 #' @param mu vector of means
 #' @param C correlation matrix
 #'
-#' @details This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix 'C'. 'mu' must take values in the open unit interval and 'C' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standardized central second moments 'C' such that all higher order central moments are zero.
+#' @details This generates multivariate Bernoulli (MVB) random vectors with mean vector
+#'  'mu' and correlation matrix 'C'. 'mu' must take values in the open unit interval and
+#'   'C' must induce a valid second Bahadur order probability distribution. That is, 
+#'   there must exist an MVB probability distribution with first moments 'mu' and 
+#'   standardized central second moments 'C' such that all higher order central moments 
+#'   are zero.
 #'
-#' @return An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the length of 'mu'.
+#' @return An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the 
+#' length of 'mu'.
 #' @export
 #'
 #' @examples
@@ -90,7 +97,8 @@ rb_unstr <- function(n, mu, C) {
   for (m in 2:(M-1)) {
     p <- drop(mu[m] + v%*%C[1:(m-1),m])
     if (any(p < 0 | p > 1)) {
-      stop('Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
+      stop('Infeasible probabilities. Are you sure specified parameters 
+           correspond to a valid Bahadur order-2 MVB distribution?')
     }
     k[ ,m] <- (rand_U[ ,m] <= p)
 
@@ -104,7 +112,8 @@ rb_unstr <- function(n, mu, C) {
   }
   p <- drop(mu[M] + v%*%C[1:(M-1),M])
   if (any(p < 0 | p > 1)) {
-    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
+    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters 
+         correspond to a valid Bahadur order-2 MVB distribution?')
   }
   k[ ,M] <-(rand_U[ ,M] <= p)
 

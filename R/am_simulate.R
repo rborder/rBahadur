@@ -4,9 +4,12 @@
 #' @param r cross-mate phenotypic correlation
 #' @param m number of biallelic causal variants
 #' @param n sample size
-#' @param afs (optional). Allele frequencies to use. If not provided, `m` will be drawn uniformly from the interval \[`min_MAF`, 1-`min_MAF`\]
-#' @param min_MAF (optional) minimum minor allele frequency for causal variants. Ignored if if `afs` is not NULL. Defaults to 0.1
-#' @param haplotypes logical. If TRUE, includes (phased) haploid genotypes in output. Defaults to FALSE
+#' @param afs (optional). Allele frequencies to use. If not provided, `m` will be drawn
+#'  uniformly from the interval \[`min_MAF`, 1-`min_MAF`\]
+#' @param min_MAF (optional) minimum minor allele frequency for causal variants. 
+#' Ignored if if `afs` is not NULL. Defaults to 0.1
+#' @param haplotypes logical. If TRUE, includes (phased) haploid genotypes in output. 
+#' Defaults to FALSE
 #'
 #' @return A list including the following objects:
 #' * `y`: phenotype vector
@@ -52,11 +55,11 @@ am_simulate <- function(h2_0, r, m, n, afs=NULL, min_MAF=.1, haplotypes=FALSE) {
   ## draw multivariate Bernoulli haplotypes
   H <- rb_dplr(n, AF_hap, U)
   ## convert haplotypes to diploid genotypes
-  X = (H[,seq(1,2*m,2)]+H[,seq(2,2*m,2)])
+  X <- (H[,seq(1,2*m,2)]+H[,seq(2,2*m,2)])
   ## compute genetic phenotypes
-  g = X %*% beta_unscaled
+  g <- X %*% beta_unscaled
   ## compute full phenotype
-  y = g + rnorm(n, 0, sqrt(1 - h2_0))
+  y <- g + rnorm(n, 0, sqrt(1 - h2_0))
   output <- list(
     y = y,
     g = g,

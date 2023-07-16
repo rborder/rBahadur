@@ -2,8 +2,7 @@
 % Please edit documentation in R/am_covariance_structure.R
 \name{am_covariance_structure}
 \alias{am_covariance_structure}
-\title{Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
-#'}
+\title{Compute Diagonal plus Low Rank equilibrium covariance structure}
 \usage{
 am_covariance_structure(beta, AF, r)
 }
@@ -15,11 +14,13 @@ am_covariance_structure(beta, AF, r)
 \item{r}{cross-mate phenotypic correlation}
 }
 \value{
-Vector 'U' such that $D + U U^T$ corresponds to the expected haploid LD-matrix given the specified genetic architecture (encoded by 'beta' and 'AF') and cross-mate phenotypic correlation 'r'. It is assumed that the total phenotypic variance at generation zero is one.
+Vector 'U' such that $D + U U^T$ corresponds to the expected haploid
+LD-matrix given the specified genetic architecture (encoded by 'beta' and 'AF')
+and cross-mate phenotypic correlation 'r'. It is assumed that the total phenotypic
+variance at generation zero is one.
 }
 \description{
-Compute Diagonal plus Low Rank covariance structure under equilibrium assortative mating
-#'
+Compute Diagonal plus Low Rank equilibrium covariance structure
 }
 \examples{
 set.seed(1)

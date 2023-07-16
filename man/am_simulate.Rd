@@ -15,11 +15,14 @@ am_simulate(h2_0, r, m, n, afs = NULL, min_MAF = 0.1, haplotypes = FALSE)
 
 \item{n}{sample size}
 
-\item{afs}{(optional). Allele frequencies to use. If not provided, \code{m} will be drawn uniformly from the interval [\code{min_MAF}, 1-\code{min_MAF}]}
+\item{afs}{(optional). Allele frequencies to use. If not provided, \code{m} will be drawn
+uniformly from the interval [\code{min_MAF}, 1-\code{min_MAF}]}
 
-\item{min_MAF}{(optional) minimum minor allele frequency for causal variants. Ignored if if \code{afs} is not NULL. Defaults to 0.1}
+\item{min_MAF}{(optional) minimum minor allele frequency for causal variants.
+Ignored if if \code{afs} is not NULL. Defaults to 0.1}
 
-\item{haplotypes}{logical. If TRUE, includes (phased) haploid genotypes in output. Defaults to FALSE}
+\item{haplotypes}{logical. If TRUE, includes (phased) haploid genotypes in output.
+Defaults to FALSE}
 }
 \value{
 A list including the following objects:

@@ -1,6 +1,7 @@
 #' Binary random variates with Diagonal Plus Low Rank (dplr) correlations
 #'
-#' Generate second Bahadur order multivariate Bernoulli random variates with Diagonal Plus Low Rank (dplr) correlation structures.
+#' Generate second Bahadur order multivariate Bernoulli random variates with 
+#' Diagonal Plus Low Rank (dplr) correlation structures.
 #'
 #' @importFrom stats runif
 #'
@@ -8,9 +9,16 @@
 #' @param mu vector of means
 #' @param U outer product component matrix
 #'
-#' @details This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standardized central second moments \eqn{C} such that all higher order central moments are zero.
+#' @details This generates multivariate Bernoulli (MVB) random vectors with mean 
+#' vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal
+#'  matrix with values dictated by 'U'. 'mu' must take values in the open unit interval 
+#'  and 'U' must induce a valid second Bahadur order probability distribution. That is, 
+#'  there must exist an MVB probability distribution with first moments 'mu' and 
+#'  standardized central second moments \eqn{C} such that all higher order central 
+#'  moments are zero.
 #'
-#' @return An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the length of 'mu'.
+#' @return An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is 
+#' the length of 'mu'.
 #' @export
 #'
 #' @examples
@@ -75,7 +83,8 @@ rb_dplr <- function(n, mu, U) {
   for (m in 2:(M-1)) {
     p <- mu[m] + x * U[m]
     if (any(p < 0 | p > 1)) {
-      stop('Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
+      stop('Infeasible probabilities. Are you sure specified parameters correspond to 
+           a valid Bahadur order-2 MVB distribution?')
     }
     k[ ,m] <- (rand_U[ ,m] <= p)
 
@@ -89,7 +98,8 @@ rb_dplr <- function(n, mu, U) {
   }
   p <- mu[M] + x*U[M]
   if (any(p < 0 | p > 1)) {
-    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters correspond to a valid Bahadur order-2 MVB distribution?')
+    stop(mu[M],' ',p,'Infeasible probabilities. Are you sure specified parameters
+         correspond to a valid Bahadur order-2 MVB distribution?')
   }
   k[ ,M] <-(rand_U[ ,M] <= p)
 
