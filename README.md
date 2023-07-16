@@ -1,4 +1,4 @@
-<img src="./logo.svg" width="40%"> 
+<img src="./man/figures/logo.svg" width="40%"> 
 
 <!-- badges: start -->
 [![CRAN](https://www.r-pkg.org/badges/version/rBahadur)](https://cran.r-project.org/package=rBahadur)
