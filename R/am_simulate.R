@@ -4,7 +4,7 @@
 #' @param r cross-mate phenotypic correlation
 #' @param m number of biallelic causal variants
 #' @param n sample size
-#' @param afs (optional). Allele frequencies to use. If not provided, `m` will be drawn uniformly from the interval [`maf`, 1-`maf`]
+#' @param afs (optional). Allele frequencies to use. If not provided, `m` will be drawn uniformly from the interval \[`min_MAF`, 1-`min_MAF`\]
 #' @param min_MAF (optional) minimum minor allele frequency for causal variants. Ignored if if `afs` is not NULL. Defaults to 0.1
 #' @param haplotypes logical. If TRUE, includes (phased) haploid genotypes in output. Defaults to FALSE
 #'
