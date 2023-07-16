@@ -8,7 +8,7 @@
 #' @param mu vector of means
 #' @param U outer product component matrix
 #'
-#' @details This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standarized central second moments \eqn{C} such that all higher order central moments are zero.
+#' @details This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standardized central second moments \eqn{C} such that all higher order central moments are zero.
 #'
 #' @return An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the length of 'mu'.
 #' @export

@@ -20,7 +20,7 @@ An \eqn{n}-by-\eqn{m} matrix of binary random variates, where \eqn{m} is the len
 Generate second Bahadur order multivariate Bernoulli random variates with Diagonal Plus Low Rank (dplr) correlation structures.
 }
 \details{
-This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standarized central second moments \eqn{C} such that all higher order central moments are zero.
+This generates multivariate Bernoulli (MVB) random vectors with mean vector 'mu' and correlation matrix \eqn{C = D + U U^T} where \eqn{D} is a diagonal matrix with values dictated by 'U'. 'mu' must take values in the open unit interval and 'U' must induce a valid second Bahadur order probability distribution. That is, there must exist an MVB probability distribution with first moments 'mu' and standardized central second moments \eqn{C} such that all higher order central moments are zero.
 }
 \examples{
 set.seed(1)
