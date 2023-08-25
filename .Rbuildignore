@@ -3,3 +3,5 @@
 ^old_code$
 ^LICENSE\.md$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
+^revdep$

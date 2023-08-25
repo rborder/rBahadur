@@ -1,3 +1,10 @@
+## version 1.0.0
+
+# ---
+
+- citation updated after publication
+- typos fixed in documentation
+
 ## version 0.9.2
 
 ---

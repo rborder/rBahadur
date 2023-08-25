@@ -30,7 +30,7 @@ A list including the following objects:
 \item \code{y}: phenotype vector
 \item \code{g}: heritable component of the phenotype vector
 \item \code{X}: matrix of diploid genotypes
-\item \code{AF}: vector of allele frequenices
+\item \code{AF}: vector of allele frequencies
 \item \code{beta_std}: standardized genetic effects
 \item \code{beta_raw}: unstandardized genetic effects
 \item \code{H}: matrix of haploid genotypes (returned only if \code{haplotypes}=TRUE)

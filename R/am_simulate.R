@@ -15,7 +15,7 @@
 #' * `y`: phenotype vector
 #' * `g`: heritable component of the phenotype vector
 #' * `X`: matrix of diploid genotypes
-#' * `AF`: vector of allele frequenices
+#' * `AF`: vector of allele frequencies
 #' * `beta_std`: standardized genetic effects
 #' * `beta_raw`: unstandardized genetic effects
 #' * `H`: matrix of haploid genotypes (returned only if `haplotypes`=TRUE)

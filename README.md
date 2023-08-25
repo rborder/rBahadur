@@ -17,7 +17,7 @@
   * `rb_unstr`: generate Bahadur order-2 MVB variates with arbitrary correlation structures
 * Assortative mating  modeling tools
   * Compute equilibrium parameters under univariate AM
-    * `h2_eq`: compute equilibrium heritablity
+    * `h2_eq`: compute equilibrium heritability
     * `rg_eq`: compute equilibrium cross-mate genetic correlation
     * `vg_eq`: compute equilibrium genetic variance
   * Generate genotype / phenotype data given initial conditions
@@ -78,7 +78,7 @@ h2_eq(r, .5)
 ## Citation
 
 Developed by [Richard Border](https://www.richardborder.com) and [Osman Malik](https://osmanmalik.github.io/). For further details, or if you find this software useful, please cite:
- - Border, R. and Malik, O.A., 2022. `rBahadur`: Efficient simulation of high-dimensional genotype data with global dependence structures. _bioRxiv_. https://doi.org/10.1101/2022.10.13.512132 
+ - Border, R. and Malik, O.A., 2022. `rBahadur`: efficient simulation of structured high-dimensional genotype data with applications to assortative mating. _BMC Bioinformatics_. https://doi.org/10.1186/s12859-023-05442-6 
 
 ## Background reading:
 
